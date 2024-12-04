@@ -6,7 +6,7 @@
 	path = aicb
 	url = https://github.com/aliyun/aicb
 	branch = master
-[submodule "ns-3-alibabacloud"]
-	path = ns-3-alibabacloud
-	url = https://github.com/aliyun/ns-3-alibabacloud
-	branch = master
+[submodule "SimAI-ns3-datacenter"]
+	path = SimAI-ns3-datacenter
+	url = https://github.com/STyGIANet/SimAI-ns3-datacenter.git
+	branch = dev

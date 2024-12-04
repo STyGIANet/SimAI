@@ -1,6 +1,6 @@
 SCRIPT_DIR=$(dirname "$(realpath $0)")
 ROOT_DIR=$(realpath "${SCRIPT_DIR:?}"/..)
-NS3_DIR="${ROOT_DIR:?}"/ns-3-alibabacloud
+NS3_DIR="${ROOT_DIR:?}"/SimAI-ns3-datacenter
 SIMAI_DIR="${ROOT_DIR:?}"/astra-sim-alibabacloud
 SOURCE_NS3_BIN_DIR="${SIMAI_DIR:?}"/extern/network_backend/ns3-interface/simulation/build/scratch/ns3.36.1-AstraSimNetwork-debug
 SOURCE_ANA_BIN_DIR="${SIMAI_DIR:?}"/build/simai_analytical/build/simai_analytical/SimAI_analytical
