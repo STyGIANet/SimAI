@@ -220,7 +220,7 @@ void Ring::insert_packet(Callable* sender) {
       send_back = true;
     }
     NPU_to_MA = false;
-    std::cout << "id: " << id << " non-zero latency packets at tick: " << Sys::boostedTick() << std::endl;
+    // std::cout << "id: " << id << " non-zero latency packets at tick: " << Sys::boostedTick() << std::endl;
     process_max_count();
     non_zero_latency_packets--;
     return;

@@ -286,10 +286,10 @@ int main(int argc, char *argv[]) {
   LogComponentEnable("PacketSink", LOG_LEVEL_INFO);
   LogComponentEnable("GENERIC_SIMULATION", LOG_LEVEL_INFO);
 
-  std::vector<ASTRASimNetwork *> networks(nodes_num, nullptr);
-  std::vector<AstraSim::Sys *> systems(nodes_num, nullptr);
+  std::vector<ASTRASimNetwork *> networks(gpu_num, nullptr);
+  std::vector<AstraSim::Sys *> systems(gpu_num, nullptr);
 
-  for (int j = 0; j < nodes_num; j++) {
+  for (int j = 0; j < gpu_num; j++) {
     networks[j] =
         new ASTRASimNetwork(j ,0);
     systems[j ] = new AstraSim::Sys(
@@ -298,7 +298,7 @@ int main(int argc, char *argv[]) {
         j,                        
         0,               
         1,                        
-        {nodes_num},        
+        {gpu_num},        
         {1},          
         "", 
         user_param.workload, 
@@ -319,7 +319,7 @@ int main(int argc, char *argv[]) {
     systems[j ]->nvswitch_id = node2nvswitch[j];
     systems[j ]->num_gpus = nodes_num - nvswitch_num;
   }
-  for (int i = 0; i < nodes_num; i++) {
+  for (int i = 0; i < gpu_num; i++) {
     systems[i]->workload->fire();
   }
   std::cout << "simulator run " << std::endl;
@@ -331,5 +331,6 @@ int main(int argc, char *argv[]) {
   #ifdef NS3_MPI
   MpiInterface::Disable ();
   #endif
+  std::cout << "simulation finished!" << std::endl;
   return 0;
 }
